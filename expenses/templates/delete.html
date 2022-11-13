@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Do you want to delete : {{ expense.name }}?</h3>
+<!-- pay attention on the name above. it has to be the same as on the views def. remember the context or locals -->
+<!-- if locals dont need to mention each dictionary name -->
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type='submit' class='btn btn-success' value='delete'>
+    <!-- <a href="{% url 'Index' %}" class="btn btn-warning">cancel or back</a>  -->
+    <!-- above is the link where to go next, because if there is no link the person would be force to delete -->
+    <!-- or stay on the same page -->
+</form>
+{% endblock %}
