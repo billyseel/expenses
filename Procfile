@@ -1,1 +1,1 @@
-web: gunicorn testweb.wsgi 
+web: gunicorn urexpenses.wsgi 
