@@ -19,7 +19,7 @@ def index(request):
         if form.is_valid:
             form.save()
         return redirect("/expenses")
-        # tabove line unecessary cos at the bottom we have return render which will take us to the index
+        # above line unecessary cos at the bottom we have return render which will take us to the index
 
     context = {
         'expenses': expenses,
