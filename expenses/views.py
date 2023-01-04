@@ -18,7 +18,7 @@ def index(request):
         # but did that to know that we are getting data and later write something
         if form.is_valid:
             form.save()
-        return redirect("/expenses")
+        return redirect("/")
         # above line unecessary cos at the bottom we have return render which will take us to the index
 
     context = {
@@ -39,7 +39,7 @@ def update(request, pk):
         # new variable name. not the same as the above form.
         if form.is_valid():
             form.save()
-        return redirect('/expenses')
+        return redirect('/')
 
     context = {
         'form': form,
@@ -57,7 +57,7 @@ def delete(request, pk):
 
     if request.method == 'POST':
         expense.delete()
-        return redirect('/expenses')
+        return redirect('/')
 
     context = {
         # 'form': form,

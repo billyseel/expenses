@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # when the first parameter is empty first page or index will display
     path('', include('expenses.urls'))
-    # path('expenses/', include('expenses.urls'))
+    # path('expenses/', include('expenses.urls')) with expenses inside all pages will require a path
 ]
