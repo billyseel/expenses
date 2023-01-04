@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h3>page to update things</h3>
-
+<br>
+<br>
+<h2>Update Your Items Here</h2>
+<hr>
 <form action="" method="POST">
     {% csrf_token %}
     <div class="form-group">
@@ -11,8 +12,8 @@
             {{ form }}
 
             <br />
-            <input type="submit" class="btn btn-success" value=" update">
-            <a href="{% url 'Delete' expense.id %}" class="btn btn-warning">cancel or back</a>
+            <input type="submit" class="btn btn-success" value=" Update">
+            <a href="{% url 'Delete' expense.id %}" class="btn btn-warning">Cancel</a>
         </div>
     </div>
 </form>

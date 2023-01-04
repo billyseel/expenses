@@ -2,42 +2,42 @@
 
 {% block content %}
 
-    <form action="" method="POST">
-        {% csrf_token %}
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label>{{ form.name.label }}</label>
-                {{ form.name }}
-            </div>
-            <div class="form-group col-md-4">
-                <label>{{ form.price.label }}</label>
-                {{ form.price }}
-            </div>
-            <div class="form-group col-md-2">
-                <input type="submit" class="btn btn-success" style="margin-top:30px;" value="儲存">
-            </div>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>{{ form.name.label }}</label>
+            {{ form.name }}
         </div>
-    </form>
+        <div class="form-group col-md-4">
+            <label>{{ form.price.label }}</label>
+            {{ form.price }}
+        </div>
+        <div class="form-group col-md-2">
+            <input type="submit" class="btn btn-success" style="margin-top:30px;" value="Add / 儲存">
+        </div>
+    </div>
+</form>
 
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th>花費項目</th>
-                <th>金額</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for i in expenses %}
-                <tr>
-                    <td>{{ i.name }}</td>
-                    <td>{{ i.price }}</td>
-                    <td>
-                        <a href="{% url 'Update' i.id %}" class="btn btn-info">修改</a>
-                        <a href="{% url 'Delete' i.id %}" class="btn btn-danger">刪除</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endblock  %}
+<table class="table table-bordered table-striped text-center">
+    <thead class="thead-dark">
+        <tr>
+            <th>Items Bought / 花費項目</th>
+            <th>Amount / 金額</th>
+            <th>Update / Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in expenses %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.price }}</td>
+            <td>
+                <a href="{% url 'Update' i.id %}" class="btn btn-info">Update / 修改</a>
+                <a href="{% url 'Delete' i.id %}" class="btn btn-danger">Delete / 刪除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
